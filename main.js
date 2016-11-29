@@ -212,15 +212,29 @@ console.log(translate('cats'));
 // Write a function called `reverse` that computes the reversal of a string.
 // For example, reverse("jag testar") should return the string "ratset gaj".
 // write your code here:
-
+function reverse(string){
+var reversal = string.split('').reverse('').join('');
+return reversal;
+}
 // write your console.log/asserts here:
-
+console.log(reverse('string'));
 // ---------------------
 // Write a function called `largest` that takes an array of numbers and returns
 // the largest number in the array.
 // write your code here:
+var numbers = [5, 22, 54, 90];
 
+function largest(numArray) {
+var largeNum = 0;
+for(i = 0; i < numArray.length; i++) {
+  if (numArray[i] > largeNum) {
+    largeNum = numArray [i];
+  }
+}
+return largeNum
+}
 // write your console.log/asserts here:
+console.log(largest(numbers));
 console.log('the largest number in the `numbers` array is ', largest(numbers));
 console.assert(largest(numbers), 101);
 
@@ -228,34 +242,78 @@ console.assert(largest(numbers), 101);
 // Write a function called `longest` that takes an array of strings and returns
 // the longest string in the array.
 // write your code here:
+var lngStr = '';
 
+function longest(strArray) {
+  for(i = 0; i < strArray.length; i++) {
+    {
+      if (strArray[i].length > lngStr.length)
+      {
+        lngStr = strArray[i];
+
+      }
+    }
+  }
+  return lngStr;
+}
 // write your console.log/asserts here:
-
-
+console.log(longest(['get', 'done', 'already']));
+console.log(longest(['get', 'done', 'already'] === 'already'));
 // ---------------------
 // Write a function called `getEvens` that takes an array of numbers and returns
 // a new array with only the even numbers from the original array
 // write your code here:
+var evenArray = [];
+
+function getEvens(newArray) {
+  for (i = 0; i < newArray.length; i++) {
+    if (numbers[i] % 2 === 0 ) {
+      evenArray.push(numbers[i]);
+    }
+  }
+  return evenArray;
+}
 
 // write your console.log/asserts here:
+console.log(getEvens([8, 5, 24, 90]));
+console.assert(getEvens([8, 5, 24, 90]) === [8, 24, 90]);
 
 
 // ---------------------
 // Write a function called `getOdds` that takes an array of numbers and returns
 // a new array with only the odd numbers from the original array
 // write your code here:
+var oddArray = [];
 
+function getOdds(newArray) {
+  for (i = 0; i < newArray.length; i++) {
+    if (numbers[i] % 2 !== 0 ) {
+      oddArray.push(numbers[i]);
+    }
+  }
+  return oddArray;
+}
 // write your console.log/asserts here:
-
+console.log(getOdds([8, 5, 24, 7]));
+console.assert(getOdds([8, 5, 24, 7]) === [5, 9, 7]);
 
 // ---------------------
 // Write a function called `containsIs` that takes an array of strings and
 // returns a new array with only the strings which contain the substring `is`
 // write your code here:
+var stringArr = [];
 
+function containsIs(words) {
+  for (i = 0; i < words.length; i++){
+    if(strings[i].includes ('is')){
+      stringArr.push(strings[i]);
+    }
+  }
+  return stringArr;
+}
 // write your console.log/asserts here:
-
-
+console.log(containsIs(['this miss', 'cant', 'miss this']));
+console.log(containsIs(['this miss', 'cant', 'miss this'])=== ['this miss', 'miss this']);
 ///////////////////////////////////////////////////////////////////////////////
 //                                                      Adventurer Mode                                                              //
 ///////////////////////////////////////////////////////////////////////////////
