@@ -60,9 +60,10 @@ function avg(x, y, z) {
     return (x + y + z)/3;
 }
 // write your console.log/asserts here:
+console.log(avg(14,19,24));
 // console.log('average of 2, 2, and 2 is ', avg(2, 2, 2));
 console.assert(avg(12, 8, 1) === 7); //passed
-console.assert(avg(2, 2, 2) === 88); //failed assertion
+console.assert(avg(2, 2, 2) === 1); //failed assertion
 
 // -------------------
 // Write a function called `getLength` that takes one parameter (a string) and
@@ -73,7 +74,8 @@ function getLength(phrase) {
 }
 
 // write your console.log/asserts here:
-console.log(getLength('this is life'));
+console.log(getLength('this is life')); //12
+console.log(getLength('it only gets better')); //19
 console.assert(getLength('gvgvgt') === 6);
 // -------------------
 // Write a function called `greaterThan` that takes two parameters and
@@ -99,6 +101,8 @@ function greet(name) {
 }
 // write your console.log/asserts here:
 console.log(greet('chris'));
+console.log(greet('tony'));
+console.log(greet('mike'));
 console.assert(greet('shannon') === 'Hello, shannon');
 // -------------------
 // Write a function called `madlib` that takes 4 or more parameters (words).
@@ -110,6 +114,7 @@ function madlib(name, age, color, day) {
 }
 // write your console.log/asserts here:
 console.log(madlib('Chris', '28', 'purple', 'Friday'));
+console.log(madlib('Mike', '32', 'red', 'Monday'));
 console.assert(madlib('Jake', '12', 'pink', 'monday') === 'Please Jake act 12 look pink on monday');
 // -------------------
 // Write a function called `max` that returns the larger of two numbers
@@ -203,11 +208,11 @@ function translate(text) {
   return answer;
 }
 
-
+var word = 'cats';
 
 // write your console.log/asserts here:
-console.log(translate('cats'));
-
+console.log(translate(word));
+console.log(word);
 // ---------------------
 // Write a function called `reverse` that computes the reversal of a string.
 // For example, reverse("jag testar") should return the string "ratset gaj".
@@ -218,11 +223,14 @@ return reversal;
 }
 // write your console.log/asserts here:
 console.log(reverse('string'));
+console.log(reverse('chain'));
+console.log(reverse('smoke'));
 // ---------------------
 // Write a function called `largest` that takes an array of numbers and returns
 // the largest number in the array.
 // write your code here:
 var numbers = [5, 22, 54, 90];
+var numbers1 = [54, 22, 66, 78];
 
 function largest(numArray) {
 var largeNum = 0;
@@ -234,7 +242,8 @@ for(i = 0; i < numArray.length; i++) {
 return largeNum
 }
 // write your console.log/asserts here:
-console.log(largest(numbers));
+console.log(largest([2,86,78]));
+console.log(largest(numbers1));
 console.log('the largest number in the `numbers` array is ', largest(numbers));
 console.assert(largest(numbers), 101);
 
@@ -258,62 +267,66 @@ function longest(strArray) {
 }
 // write your console.log/asserts here:
 console.log(longest(['get', 'done', 'already']));
+console.log(longest(['get', 'up', 'down', 'functionality'] === 'functionality' ));
 console.log(longest(['get', 'done', 'already'] === 'already'));
 // ---------------------
 // Write a function called `getEvens` that takes an array of numbers and returns
 // a new array with only the even numbers from the original array
 // write your code here:
-var evenArray = [];
 
 function getEvens(newArray) {
+  var evenArray = [];
   for (i = 0; i < newArray.length; i++) {
-    if (numbers[i] % 2 === 0 ) {
-      evenArray.push(numbers[i]);
+    if (newArray[i] % 2 === 0 ) {
+      evenArray.push(newArray[i]);
     }
   }
   return evenArray;
 }
 
 // write your console.log/asserts here:
-console.log(getEvens([8, 5, 24, 90]));
-console.assert(getEvens([8, 5, 24, 90]) === [8, 24, 90]);
+console.log(getEvens([8, 4, 3, 5]));
+console.log(getEvens([8, 4, 3, 5]));
+console.assert(getEvens([8, 4, 3, 5]) === [8, 4, 3]);
 
 
 // ---------------------
 // Write a function called `getOdds` that takes an array of numbers and returns
 // a new array with only the odd numbers from the original array
 // write your code here:
-var oddArray = [];
 
 function getOdds(newArray) {
+  var oddArray = [];
   for (i = 0; i < newArray.length; i++) {
-    if (numbers[i] % 2 !== 0 ) {
-      oddArray.push(numbers[i]);
+    if (newArray[i] % 2 !== 0 ) {
+      oddArray.push(newArray[i]);
     }
   }
   return oddArray;
 }
 // write your console.log/asserts here:
 console.log(getOdds([8, 5, 24, 7]));
-console.assert(getOdds([8, 5, 24, 7]) === [5, 9, 7]);
+console.log(getOdds([3, 5, 7, 8]));
+console.assert(getOdds([8, 5, 24, 7]) [0] === 5);
+console.assert(getOdds([8, 5, 24, 7]) [1] === 7);
 
 // ---------------------
 // Write a function called `containsIs` that takes an array of strings and
 // returns a new array with only the strings which contain the substring `is`
 // write your code here:
-var stringArr = [];
 
 function containsIs(words) {
+  var stringArr = [];
   for (i = 0; i < words.length; i++){
-    if(strings[i].includes ('is')){
-      stringArr.push(strings[i]);
+    if(words[i].includes ('is')){
+      stringArr.push(words[i]);
     }
   }
   return stringArr;
 }
 // write your console.log/asserts here:
 console.log(containsIs(['this miss', 'cant', 'miss this']));
-console.log(containsIs(['this miss', 'cant', 'miss this'])=== ['this miss', 'miss this']);
+console.log( containsIs( ['this'] )[0] === 'this' );
 ///////////////////////////////////////////////////////////////////////////////
 //                                                      Adventurer Mode                                                              //
 ///////////////////////////////////////////////////////////////////////////////
